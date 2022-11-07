@@ -16,4 +16,3 @@ def is_valid_walk(walk):
 
 if __name__ == '__main__':
     print(is_valid_walk(['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e']))
-    print(is_valid_walk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']))
