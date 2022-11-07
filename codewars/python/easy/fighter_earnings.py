@@ -16,5 +16,5 @@ def count_highest_earnings(fights_earnings: list):
 
 
 if __name__ == '__main__':
-    input = [1, 2, 4, 5, 56, 6]
-    print(count_highest_earnings(input))
+    matches_prices = [1, 2, 4, 5, 56, 6]
+    print(count_highest_earnings(matches_prices))
