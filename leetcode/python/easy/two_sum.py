@@ -1,17 +1,20 @@
+# task number - 1
+
+
 from typing import List
 
 
-class Solution:
-    @staticmethod
-    def two_sum(nums: List[int], target: int) -> List[int]:
-        values = {}
-        for num_n, num in enumerate(nums):
-            if target - num in values:
-                return [values[target - num], num_n]
-            else:
-                values[num] = num_n
+def two_sum(nums: List[int], target: int) -> List[int]:
+    values = {}
+
+    for num_index, num_value in enumerate(nums):
+        if target - num_value in values:
+            return [values[target - num_value], num_index]
+        else:
+            values[num_value] = num_index
 
 
 if __name__ == '__main__':
-    print(Solution.two_sum([2, 7, 11, 15], 9))
-    print(Solution.two_sum([3, 3], 6))
+    print(two_sum([2, 7, 11, 15], 9))  # [0, 1]
+    print(two_sum([3, 3], 6))  # [0, 1]
+    print(two_sum([2, 7, 11, 15, 3], 14))  # [2, 4]
