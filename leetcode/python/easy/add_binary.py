@@ -34,4 +34,3 @@ def add_binary(a: str, b: str) -> str:
 if __name__ == '__main__':
     print(add_binary(a='11', b='1'))  # '100'
     print(add_binary(a='1010', b='1011'))  # '10101'
-
