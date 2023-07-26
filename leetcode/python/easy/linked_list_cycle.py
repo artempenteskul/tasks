@@ -11,6 +11,10 @@ class ListNode:
 
 
 def has_cycle(head: Optional[ListNode]) -> bool:
+    """
+    works with additional memory for hash set to check the nodes
+    """
+
     values = set()
 
     while head:
@@ -22,7 +26,11 @@ def has_cycle(head: Optional[ListNode]) -> bool:
     return False
 
 
-def has_cycle_1(head: Optional[ListNode]) -> bool:
+def has_cycle1(head: Optional[ListNode]) -> bool:
+    """
+    works without any additional memory, fast and slow pointer technique
+    """
+
     fast, slow = head, head
 
     while fast and fast.next:
