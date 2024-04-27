@@ -11,22 +11,18 @@ class BrowserHistory:
         self.pointer = len(self.history) - 1
 
     def back(self, steps: int) -> str:
-        if self.pointer - steps < 0:
-            print(f'You are in "{self.history[self.pointer]}". You can only move back to "{self.history[0]}".')
+        self.pointer -= steps
+
+        if self.pointer < 0:
             self.pointer = 0
-        else:
-            print(f'You are in "{self.history[self.pointer]}". Moving back to "{self.history[self.pointer - steps]}".')
-            self.pointer -= steps
 
         return self.history[self.pointer]
 
     def forward(self, steps: int) -> str:
-        if self.pointer + steps > len(self.history) - 1:
-            print(f'You are in "{self.history[self.pointer]}". You can only move forward to "{self.history[-1]}".')
+        self.pointer += steps
+
+        if self.pointer > len(self.history) - 1:
             self.pointer = len(self.history) - 1
-        else:
-            print(f'You are in "{self.history[self.pointer]}". Moving forward to "{self.history[self.pointer + steps]}".')
-            self.pointer += steps
 
         return self.history[self.pointer]
 
