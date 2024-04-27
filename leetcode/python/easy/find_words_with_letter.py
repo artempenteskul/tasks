@@ -9,4 +9,3 @@ if __name__ == '__main__':
     input_words = ['leet', 'code']
     input_x = 'e'
     print(f'Result for words {input_words} and x {input_x} is {find_words_with_letter(input_words, input_x)}')  # [0, 1]
-
