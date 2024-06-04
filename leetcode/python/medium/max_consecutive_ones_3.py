@@ -48,4 +48,3 @@ if __name__ == '__main__':
     input_nums = [0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1]
     input_k = 3
     print(f'Max consecutive ones for the input - {longest_ones(input_nums, input_k)}')  # 10
-
