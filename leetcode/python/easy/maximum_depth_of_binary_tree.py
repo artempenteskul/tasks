@@ -11,9 +11,16 @@ class TreeNode:
         self.right = right
 
 
-# example of bfs algo (uses queue)
+def count_max_depth_dfs(root: Optional[TreeNode]) -> int:
+    if not root:
+        return 0
 
-def count_max_depth(root: Optional[TreeNode]) -> int:
+    left_depth = count_max_depth_dfs(root.left)
+    right_depth = count_max_depth_dfs(root.right)
+    return max(left_depth, right_depth) + 1
+
+
+def count_max_depth_bfs(root: Optional[TreeNode]) -> int:
     if root is None:
         return 0
 
@@ -35,10 +42,10 @@ def count_max_depth(root: Optional[TreeNode]) -> int:
 
 
 if __name__ == '__main__':
-    root = TreeNode(3)
-    root.left = TreeNode(9)
-    root.right = TreeNode(20)
-    root.right.left = TreeNode(15)
-    root.right.right = TreeNode(7)
+    root_node = TreeNode(3)
+    root_node.left = TreeNode(9)
+    root_node.right = TreeNode(20)
+    root_node.right.left = TreeNode(15)
+    root_node.right.right = TreeNode(7)
 
-    print(count_max_depth(root))  # 3
+    print(count_max_depth_dfs(root_node))  # 3
