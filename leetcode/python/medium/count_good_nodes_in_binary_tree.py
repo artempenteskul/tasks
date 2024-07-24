@@ -23,4 +23,4 @@ def count_good_nodes(root: TreeNode, current_max: int = None) -> int:
 
 if __name__ == '__main__':
     input_root = TreeNode(3, left=TreeNode(1, left=TreeNode(3)), right=TreeNode(4, left=TreeNode(1), right=TreeNode(5)))
-    print(f'Good nodes quantity for input root - {count_good_nodes(input_root)}')
+    print(f'Good nodes quantity for input root - {count_good_nodes(input_root)}')  # 4
