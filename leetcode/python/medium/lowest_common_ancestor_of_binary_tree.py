@@ -8,7 +8,7 @@ class TreeNode:
         self.right = right
 
 
-def common_ancestor(root: TreeNode, p: TreeNode, q: TreeNode, ancestor: int = None) -> 'TreeNode' or None:
+def common_ancestor(root: TreeNode, p: TreeNode, q: TreeNode) -> 'TreeNode' or None:
     if root is None:
         return None
 
