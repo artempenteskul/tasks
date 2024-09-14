@@ -8,36 +8,6 @@ class TreeNode:
         self.right = right
 
 
-# def right_side_view(root: TreeNode) -> list[int]:
-#     if not root:
-#         return []
-#
-#     view = []
-#     queue = [root]
-#     current_level_size = 1
-#     next_level_size = 0
-#     current_level_val = None
-#
-#     while queue:
-#         for _ in range(current_level_size):
-#             node = queue.pop(0)
-#             current_level_val = node.val
-#
-#             if node.left:
-#                 queue.append(node.left)
-#                 next_level_size += 1
-#
-#             if node.right:
-#                 queue.append(node.right)
-#                 next_level_size += 1
-#
-#         view.append(current_level_val)
-#         current_level_size = next_level_size
-#         next_level_size = 0
-#
-#     return view
-
-
 def right_side_view(root: TreeNode) -> list[int]:
     if not root:
         return []
