@@ -1,7 +1,7 @@
 # task number - 841
 
 
-def can_visit_all_rooms(rooms: list[list[int]]) -> bool:
+def can_visit_all_rooms_brute(rooms: list[list[int]]) -> bool:
     keys = {0}
     unvisited = set()
 
@@ -20,6 +20,19 @@ def can_visit_all_rooms(rooms: list[list[int]]) -> bool:
             visit_room(cur_room=room)
 
     return True if not unvisited else False
+
+
+def can_visit_all_rooms(rooms: list[list[int]]) -> bool:
+    def dfs(room_keys: list):
+        for key in room_keys:
+            if key not in seen:
+                seen.add(key)
+                dfs(rooms[key])
+
+    seen = {0}
+    dfs(rooms[0])
+
+    return len(seen) == len(rooms)
 
 
 if __name__ == '__main__':
