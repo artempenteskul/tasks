@@ -1,31 +1,6 @@
 # task number - 841
 
 
-
-# def can_visit_all_rooms(rooms: list[list[int]]) -> bool:
-#     keys = {0}
-#     unvisited = set()
-#
-#     def visit_room(cur_room: int):
-#         if cur_room in unvisited:
-#             unvisited.remove(keys)
-#
-#         cur_room_keys = rooms[cur_room]
-#         keys.update(cur_room_keys)
-#         for cur_room_key in cur_room_keys:
-#             if cur_room_key in unvisited:
-#                 visit_room(cur_room_key)
-#
-#     for room, room_keys in enumerate(rooms):
-#         if room not in keys:
-#             unvisited.add(room)
-#         else:
-#             visit_room(room)
-#
-#     return True if not unvisited else False
-#
-
-
 def can_visit_all_rooms(rooms: list[list[int]]) -> bool:
     keys = {0}
     unvisited = set()
