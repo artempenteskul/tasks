@@ -2,7 +2,11 @@
 # topics - array, string, prefix sum
 
 
-def vowel_strings_old(words: list[str], queries: list[list[int]]) -> list[int]:
+def vowel_strings_slow(words: list[str], queries: list[list[int]]) -> list[int]:
+    """
+    this solution is not optimal, not fast enough
+    """
+
     vowels = {'a', 'e', 'i', 'o', 'u'}
 
     vowel_str_flags = [1 if x[0] in vowels and x[-1] in vowels else 0 for x in words]
@@ -16,6 +20,10 @@ def vowel_strings_old(words: list[str], queries: list[list[int]]) -> list[int]:
 
 
 def vowel_strings(words: list[str], queries: list[list[int]]) -> list[int]:
+    """
+    this solution is optimal, fast enough
+    """
+
     vowels = {'a', 'e', 'i', 'o', 'u'}
 
     prefix_count = [0]
