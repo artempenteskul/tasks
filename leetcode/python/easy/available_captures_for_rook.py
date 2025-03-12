@@ -11,31 +11,34 @@ def num_rook_pawn_captures(board: list[list[str]]) -> int:
             if board[i][j] == 'R':
 
                 rook_row = board[i]
+                rook_column = [r[j] for r in board]
 
-                for x in range(i - 1, -1, -1):
-                    if rook_row[x] == 'p':
+                for x in reversed(rook_row[:j]):
+                    if x == 'p':
                         available_pawn_captures += 1
-                    elif rook_row[x] == 'B':
+                        break
+                    elif x == 'B':
                         break
 
-                for x in range(i + 1, 8):
-                    if rook_row[x] == 'p':
+                for x in rook_row[j:]:
+                    if x == 'p':
                         available_pawn_captures += 1
-                    elif rook_row[x] == 'B':
+                        break
+                    elif x == 'B':
                         break
 
-                rook_column = [c[j] for c in board]
-
-                for x in range(j - 1, -1, -1):
-                    if rook_column[x] == 'p':
+                for x in reversed(rook_column[:i]):
+                    if x == 'p':
                         available_pawn_captures += 1
-                    elif rook_column[x] == 'B':
+                        break
+                    elif x == 'B':
                         break
 
-                for x in range(j + 1, 8):
-                    if rook_column[x] == 'p':
+                for x in rook_column[i:]:
+                    if x == 'p':
                         available_pawn_captures += 1
-                    elif rook_column[x] == 'B':
+                        break
+                    elif x == 'B':
                         break
 
     return available_pawn_captures
@@ -65,4 +68,16 @@ if __name__ == '__main__':
         [".", ".", ".", ".", ".", ".", ".", "."]
     ]
     print(f'Number of available rook pawn captures - {num_rook_pawn_captures(input_board)}')  # 0
+
+    input_board = [
+        [".", ".", ".", ".", ".", ".", ".", "."],
+        [".", ".", "B", "B", "B", "B", "B", "."],
+        [".", "p", "B", "p", "p", "p", "B", "p"],
+        [".", "p", "B", "p", "R", "p", "B", "p"],
+        [".", "p", "B", "p", "p", "p", "B", "p"],
+        [".", ".", "B", "B", "B", "B", "B", "."],
+        [".", ".", ".", "p", "p", "p", ".", "."],
+        [".", ".", ".", ".", ".", ".", ".", "."]
+    ]
+    print(f'Number of available rook pawn captures - {num_rook_pawn_captures(input_board)}') # 4
 
