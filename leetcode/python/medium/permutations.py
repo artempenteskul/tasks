@@ -7,12 +7,11 @@ def permute(nums: list[int]) -> list[list[int]]:
 
     def backtrack(current: list[int]):
         if len(current) == len(nums):
-            res.append(current)
+            res.append(current[:])
         else:
             for num in nums:
                 if num not in current:
-                    new_current = current + [num]
-                    backtrack(new_current)
+                    backtrack(current + [num])
 
     backtrack([])
 
